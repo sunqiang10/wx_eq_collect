@@ -1,0 +1,42 @@
+/* miniprogram/pages/vList/vList.wxss */
+page{
+  background-color: #eee;
+}
+.case-page{
+  padding:0rpx; 
+}
+.list-masonry{
+  column-count: 1;
+  column-gap: 1rpx;
+
+}
+.item-masonry{
+  background-color: #fff;break-inside: avoid; box-sizing: border-box; 
+  padding: 0rpx;
+  margin:15rpx 5rpx 15rpx 5rpx;
+  border-radius: 3px;
+}
+.item-masonry image {
+  width: 100%; 
+  border-top-right-radius: 3px; 
+  border-top-left-radius: 3px;
+}
+.coverContainer {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.demo-text-1 {
+  padding: 0px 5px 5px ;
+  font-weight: bold;
+  font-size: 25rpx;
+  /* background: rgba(0, 0, 0, 0.5); */
+  display: block;
+  color: #333;
+}
+.demo-text-2 {
+  padding: 0px 5px 5px ;
+  font-size: 20rpx;
+  display: block;
+  color: #333;
+}

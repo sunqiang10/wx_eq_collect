@@ -1,0 +1,92 @@
+/* utils/comp_login.wxss */
+.bt_getUser{
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  font-size: 10px;
+  width:80px;
+  height: 30px;
+  color: white;
+  background-color: rgba(16, 138, 5, 0.5);  
+  border-radius: 0px 15px 15px 0px;
+  padding: 0px;
+}
+.bt_getEqUser{
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  font-size: 10px;
+  padding: 0px;
+  width:80px;
+  height: 30px;
+  color: white;
+  background-color: rgba(16, 138, 5, 0.5);  
+  border-radius: 15px 0px 0px 15px;
+}
+.area_login{
+  position: absolute;
+  top: 0px;
+  width:100%;
+  height:100%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+.frm_login{
+  background-color: rgba(255, 255, 255, 0.8); 
+  width:200px;
+  height:140px;   
+  border-radius: 0px 0px 10px 10px;
+  position: absolute;
+  top: -140px;
+  left: calc(50% - 100px);  
+}
+.view_username{
+  font-size: 12px;
+  margin: 20px 0px 0px 20px;
+  display: inline-flex
+}
+.view_username input{
+  width:100px
+}
+.view_username text{
+  padding-top: 3px
+}
+.view_password{
+  font-size: 12px;
+  margin: 10px 0px 0px 20px;
+  display: inline-flex;
+}
+.view_password input{
+  width:100px;
+}
+.view_password text{
+  padding-top: 3px
+}
+.view_bt{
+  display: inline-flex
+}
+.view_password_getUser{
+  font-size: 12px;
+  padding: 0px;
+  width:80px;
+  height: 30px;
+  color: white;
+  background-color: rgba(16, 138, 5, 0.5);  
+  margin-top: 25px;
+  margin-left: 12px;
+}
+.bt_icon_right{
+  width: 20px; 
+  height: 23px;
+  margin-right:5px;
+  margin-top:2px;
+  float:right;
+  border-radius:10px
+}
+.bt_icon_left{
+  width: 20px; 
+  height: 23px;
+  margin-left:5px;
+  margin-top:2px;
+  float:left;
+    border-radius:10px
+}

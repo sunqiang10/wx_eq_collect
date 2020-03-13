@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "震情列表",
+  "usingComponents": {
+    "comp_login": "../component/comp_login"
+  }
 }

@@ -1,0 +1,82 @@
+<!--pages/eqinfo/eqview.wxml-->
+<comp_bullet reportList="{{reportList}}" class="comp_bullet"></comp_bullet>
+<view class="all_container">
+  <map class='map' markers="{{markers}}" longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' show-location></map>
+  <form bindsubmit="submitReport" bindreset="formReset">
+    <view class="submit_bt">
+      <button open-type="openSetting"  wx-if="{{show_p_bt}}" bindopensetting='setLocation'
+      style="width:{{bt_width}}">授权定位</button>
+      <button style="width:{{bt_width}}" formType="submit" disabled="{{submitBtDisable}}">提交上报</button>
+    </view>
+    <view> 
+     
+    <view wx-if="{{userInfo.is_wx==2}}">
+      <view class="section">
+        <view class="section__title">负责人：</view>
+        <input name="c_addr" placeholder="" disabled='true' value="{{userInfo.p_user}}" />
+      </view>
+    </view>
+      <view class="section">
+        <view class="section__title">调查点：</view>
+        <input name="c_addr" placeholder="" value="{{c_addr}}" />
+      </view>
+      <view class="section">
+        <view class="section__title" style=" margin-top: 3px;">东经：</view>
+        <input class="weui-input" type="digit" name="currenLon" placeholder="" value="{{currenLon}}" />
+      </view>
+      <view class="section">
+        <view class="section__title" style=" margin-top: 3px;">北纬：</view>
+        <input class="weui-input" type="digit " name="currenLat" placeholder="" value="{{currenLat}}"/>
+      </view>
+      <view class="section">
+        <view class="section__title">初判烈度：</view>
+        <picker bindchange="intensityPickerChange" value="{{intensity_index}}" range="{{intensity_array}}" style="width:100%">
+          {{intensity_array[intensity_index]}} 度
+        </picker>
+      </view>
+      <view class="section">
+        <view class="section__title" style=" margin-top: 3px;">死亡人数：</view>
+        <input class="weui-input" type="digit" name="death_count" placeholder="人数"  />
+      </view>
+      <view class="section">
+        <view class="section__title" style=" margin-top: 3px;">死亡原因：</view>
+        <input name="input" placeholder="无" name="death_cause"/>
+      </view>
+      <view class="section">
+        <view class="section__title" style=" margin-top: 3px;">重伤人数：</view>
+        <input class="weui-input" type="digit" name="injured_count" placeholder="人数"  />
+      </view>
+      <view class="section">
+        <view class="section__title" style=" margin-top: 3px;">轻伤人数：</view>
+        <input class="weui-input" type="digit" placeholder="人数" name="wound_count"/>
+      </view>
+      <view class="section">
+        <view class="section__title">房屋结构：</view>
+        <picker bindchange="houseTypePickerChange" value="{{house_type_index}}" range="{{house_type_array}}" style="width:100%">
+          {{house_type_array[house_type_index]}}
+        </picker>
+      </view>
+      <view class="section">
+        <view class="section__title">破坏程度：</view>
+        <picker bindchange="housePickerChange" value="{{house_index}}" range="{{house_array}}" style="width:100%">
+          {{house_array[house_index]}}
+        </picker>
+      </view>
+      <view class="section">
+        <mp-uploader style="width:100%"
+          bindfail="uploadError" 
+          bindsuccess="uploadSuccess" 
+          select="{{selectFile}}" 
+          upload="{{uplaodFile}}" 
+          binddelete ="uploadDelete" 
+          files="{{files}}" max-count="5" title="图片上传" tips="图片上传提示">
+        </mp-uploader>
+      </view>
+       <view class="section">
+        <view class="section__title">其他：</view>        
+        <textarea placeholder=" " name="content"/>
+      </view>
+    </view>
+  </form>
+</view>
+<comp_login bindmyevent="compCall" fromUrl='../eqinfo/eqview?id={{cata_id}}&longitude={{longitude}}&latitude={{latitude}}'></comp_login>

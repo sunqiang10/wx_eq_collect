@@ -21,6 +21,11 @@ page{
   border-top-right-radius: 3px; 
   border-top-left-radius: 3px;
 }
+.imageUpload{
+  width: 100%; 
+  border-top-right-radius: 3px; 
+  border-top-left-radius: 3px;
+}
 .coverContainer {
   width: 100%;
   padding: 0px;

@@ -1,18 +1,20 @@
 {
-  "pages": [
+  "pages": [ 
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/users/userview",
+    "pages/eqinfo/eqview"
   ],
   "window": {
     "enablePullDownRefresh": true,
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "地震灾情数据上报",
     "navigationBarTextStyle": "black"
   },
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于计算震中距离"
+      "desc": "你的位置信息将用于上报位置"
     }
   },
   "sitemapLocation": "sitemap.json"

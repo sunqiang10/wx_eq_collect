@@ -1,0 +1,37 @@
+<!--pages/component/bullet.wxml-->
+<!-- top -->
+<view class='dmGroup btm' style="animation: dmAnimation2 25s linear infinite; ">
+  <view class='dmItem' wx:for="{{ dmData }}" wx:if="{{ index < 6 }}" wx:key="key">
+    <view class='dm'>
+      <view class='avatarBox'>
+        <image src='{{ item.sex == 0 ? avatarBoy : avatarGirl }}' class='avatar' mode='aspectFit'></image>
+        <image src='{{ item.sex == 0 ? iconBoy : iconGirl }}' class='sex' mode='aspectFit'></image>
+      </view>
+      <text class='content'>{{ item.content }}</text>
+    </view>
+  </view>
+</view>
+<!-- mid -->
+<view class='dmGroup mid'  style="animation: dmAnimation2 30s linear 1s infinite; ">
+  <view class='dmItem' wx:for="{{ dmData }}" wx:if="{{ index > 5 && index < 10 }}" wx:key="key">
+    <view class='dm'>
+      <view class='avatarBox'>
+        <image src='{{ item.sex == 0 ? avatarBoy : avatarGirl }}' class='avatar' mode='aspectFit'></image>
+        <image src='{{ item.sex == 0 ? iconBoy : iconGirl }}' class='sex' mode='aspectFit'></image>
+      </view>
+      <text class='content'>{{ item.content }}</text>
+    </view>
+  </view>
+</view>
+<!-- btm -->
+<view class='dmGroup top'  style="animation: dmAnimation2 35s linear infinite; ">
+  <view class='dmItem' wx:for="{{ dmData }}" wx:if="{{ index > 9 }}" wx:key="key">
+    <view class='dm'>
+      <view class='avatarBox'>
+        <image src='{{ item.sex == 0 ? avatarBoy : avatarGirl }}' class='avatar' mode='aspectFit'></image>
+        <image src='{{ item.sex == 0 ? iconBoy : iconGirl }}' class='sex' mode='aspectFit'></image>
+      </view>
+      <text class='content'>{{ item.content }}</text>
+    </view>
+  </view>
+</view>

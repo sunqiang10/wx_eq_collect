@@ -1,0 +1,72 @@
+<!--pages/users/userview.wxml-->
+<view class="all_container">
+    <view class='item-container' wx:for="{{note}}" wx:key="key" wx:for-index="noteIndex">
+      <view class='item-masonry'>
+        <image src='{{item.url}}' mode='aspectFill' lazy-load="true" binderror="errorFunction" data-index="{{noteIndex}}"></image>
+        <view class="coverContainer">
+            <text class="demo-text-1">{{item.title}}</text>
+            <text class="demo-text-2">{{item.createTime}} {{item.Lon}},{{item.Lat}} 发生{{item.m}}级地震，深度{{item.depth}}公里</text>
+            <button bindtap="deleteReport" data-index="{{item.report.id}}" class="del_bt">删除</button>   
+        </view>
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">上报时间:</view>
+        <view>{{item.report.updatetime}}</view>        
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">上报地点:</view>
+        <view>{{item.report.c_addr}}</view>        
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">北纬:</view>
+        <view>{{item.report.currenLat}}</view>        
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">东经:</view>
+        <view>{{item.report.currenLon}}</view>        
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">死亡人数:</view>
+        <view wx-if="{{item.report.death_count}}">{{item.report.death_count}}</view>        
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">重伤人数:</view>
+        <view wx-if="{{item.report.injured_count}}">{{item.report.injured_count}}</view>        
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">轻伤人数:</view>
+        <view wx-if="{{item.report.wound_count}}">{{item.report.wound_count}}</view>        
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">死亡原因:</view>
+        <view wx-if="{{item.report.death_cause}}">{{item.report.death_cause}}</view>        
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">房屋结构:</view>
+        <view wx-if="{{item.report.house_type}}">{{item.report.house_type}}</view>        
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">破坏程度:</view>
+        <view wx-if="{{item.report.house}}">{{item.report.house}}</view>        
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">初判烈度:</view>
+        <view wx-if="{{item.report.intensity}}">{{item.report.intensity}}</view>        
+      </view>
+      <view class='report_content'>
+        <view  wx:for="{{item.reportImgs}}" wx:key="key" wx:for-item="reportImg"  wx:for-index="imgIndex">
+             <image bindtap='imgYu' 
+             data-index="{{noteIndex}},{{imgIndex}}"
+             src='{{reportImg}}' class="imageUpload"></image>
+        </view>
+      </view>
+      <view class='report_content'>
+        <view class="report_content_lablel">其他:</view>
+        <view wx-if="{{item.report.content}}">{{item.report.content}}</view>  
+      </view>
+    </view>
+</view>
+<view class="btGroup">
+  <button class="logout_bt_left" bindtap="returnMain">返回主页</button>
+  <button bindtap="logout" class="logout_bt_right">退出登录</button>
+</view>

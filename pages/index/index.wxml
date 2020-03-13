@@ -3,14 +3,15 @@
   <view class='list-masonry'>
     <view class='item-masonry' wx:for="{{note}}" wx:key="key">
       <view>
-        <navigator url="../vView/vViewInfo?id={{item.id}}" open-type="navigate" class="uploader-text">
+        <navigator url="../eqinfo/eqview?id={{item.id}}&longitude={{item.longitude}}&latitude={{item.latitude}}" open-type="navigate" class="uploader-text">
           <image src='{{item.url}}' mode='aspectFill' lazy-load="true" binderror="errorFunction" data-index="{{index}}"></image>
         </navigator>      
         <view class="coverContainer">
             <text class="demo-text-1">{{item.title}}</text>
-            <text class="demo-text-2">{{item.createTime}}</text>
+            <text class="demo-text-2">{{item.createTime}} {{item.Lon}},{{item.Lat}} 发生{{item.m}}级地震，深度{{item.depth}}公里</text>
         </view>
-       </view>
+      </view>
     </view>
   </view>
 </view>
+<comp_login class="comp_login" bindmyevent="compCall" fromUrl='../index/index' refresh4show="{{refresh4show}}"></comp_login>

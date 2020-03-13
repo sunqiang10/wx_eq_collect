@@ -1,0 +1,34 @@
+/* pages/component/bullet.wxss */
+page { 
+  height: 100%; 
+  background: #eee; 
+  font-size: 28rpx; 
+  color: #333;
+  box-sizing: border-box; 
+}
+.container{
+  width:100%;
+  height:100%;
+  background-color: black;
+}
+view, text, scroll-view, swiper, button, form, input, textarea, label, navigator, image { box-sizing: border-box; }
+
+.launchGird{ padding: 60rpx; margin-top: 40%; position: relative; }
+
+@keyframes dmAnimation2{ 
+  0% { transform: translateX(0); } 
+  100% { transform: translateX(-130%); } 
+}
+
+.icon{ width: 28rpx; height: 28rpx; overflow: hidden; margin-right: 15rpx; }
+.dmGroup{ position: absolute; top:250rpx; left: 100%; z-index: 10; animation-timing-function: linear; animation-fill-mode: none; transform: translateZ(0);  white-space: nowrap; height: 60rpx; }
+.dmGroup.top{ height: 60rpx; }
+.dmGroup.mid{ height: 60rpx; top:305rpx;  }
+.dmGroup.btm{ height: 60rpx; top:365rpx; }
+
+.dmItem{ display: inline-flex; margin-right: 60rpx; white-space: nowrap;  }
+.dmItem .dm{ display: inline-flex; vertical-align: middle; align-items: center; position: relative; height: 50rpx; line-height: 50rpx; padding: 0 15rpx 0 5rpx; background: rgba(0,0,0,.5);  border-radius: 25rpx; overflow: hidden; font-size: 24rpx; color: #fff; }
+.dmItem .avatarBox{ display: inline-block; position: relative;  width: 40rpx; height: 40rpx; margin-right: 10rpx; }
+.dmItem .avatarBox .avatar{ width: 40rpx; height: 40rpx; border: 0; border-radius: 50%; overflow: hidden; }
+.dmItem .dm .sex{ position: absolute; left: 25rpx; top: 18rpx; width: 22rpx; height: 22rpx; overflow: hidden; }
+.dmItem .dm .content{display: inline-block; max-width: 1000rpx; height: 50rpx; line-height: 50rpx; margin-right: 10rpx; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }

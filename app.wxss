@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import './pages/component/uploader/uploader.wxss';
 .container {
   height: 100%;
   display: flex;

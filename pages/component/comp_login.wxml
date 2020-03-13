@@ -1,0 +1,45 @@
+<!--utils/comp_login.wxml-->
+<view class="area_login" wx-if="{{show_login}}">
+    <view class="frm_login" animation="{{ani}}">
+      <view class="view_username">
+        <text>用户名:</text>
+        <input type="text" placeholder="输入用户名" value="{{username}}" bindinput="getUsername"/>
+      </view>
+      <view class="view_password">
+        <text>密码：</text>
+        <input password type="text" placeholder="输入密码"  bindinput="getPassword"/>
+      </view>
+      <view class="view_bt">
+        <button class='view_password_getUser'  bindtap="toLogin" disabled="{{toLoginBtDisable}}">登录</button>
+        <button class='view_password_getUser'  bindtap="hideLoginView">取消</button>
+      </view>
+    </view>
+  </view>
+  <button wx-if="{{show_bt}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='bt_getUser'>
+    <view style="margin-top:2px">  
+      微信登录<image class="bt_icon_right" src="../assets/wx.png">
+      </image>
+    </view>
+  </button>
+  <button wx-if="{{show_bt}}" bindtap="showLoginView" class="bt_getEqUser">      
+    <view style="margin-top:2px">  
+      <image class="bt_icon_left" src="../assets/user.png">
+      </image>调查员登录
+    </view>
+  </button>
+  <navigator url="../users/userview" open-type="navigate" class="uploader-text">
+  <button wx-if="{{show_user__bt1}}" bindtap="showUserView" class='bt_getUser'>
+    <view style="margin-top:2px">  
+      {{nickname}}<image  class="bt_icon_right" src="{{pic_path}}">
+      </image>
+    </view>
+  </button>
+  </navigator> 
+  <navigator url="../users/userview" open-type="navigate" class="uploader-text">
+    <button wx-if="{{show_user__bt2}}" class="bt_getEqUser">  
+        <view style="margin-top:2px">  
+          <image  class="bt_icon_left" src="{{pic_path}}">
+          </image>{{nickname}}
+        </view>      
+    </button>
+  </navigator> 
